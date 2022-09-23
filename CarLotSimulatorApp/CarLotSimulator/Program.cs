@@ -17,17 +17,43 @@ namespace CarLotSimulator
             //Now that the Car class is created we can instanciate 3 new cars
             //Set the properties for each of the cars
             //Call each of the methods for each car
+            CarLot lot = new CarLot();
+            
 
-            //*************BONUS*************//
+            Car Car1 = new Car();
+            Car1.Year = 2016;
+            Car1.Make = "Chevy";
+            Car1.Model = "Camaro";
+            Car1.EngineNoise = "VROOM";
+            Car1.HonkNoise = "BEEP";
+            Car1.IsDriveable = true;
+            Car1.MakeEngineNoise(Car1.EngineNoise);
+            Car1.MakeHonkNoise(Car1.HonkNoise);
+            lot.CarLots.Add(Car1);
 
-            // Set the properties utilizing the 3 different ways we learned about, one way for each car
+            Car Car2 = new Car() { Year = 2020, Make = "Tesla", Model = "X", EngineNoise = "ROAR", HonkNoise = "BOOP", IsDriveable = true };
+            Car2.MakeEngineNoise(Car2.EngineNoise);
+            Car2.MakeHonkNoise(Car2.HonkNoise);
+            lot.CarLots.Add(Car2);
 
-            //*************BONUS X 2*************//
+            Car Car3 = new Car(2010, "Subaru", "Forester", "ROOM", "HONK",false);
+            Car3.MakeEngineNoise(Car3.EngineNoise);
+            Car3.MakeHonkNoise(Car3.HonkNoise);
+            lot.CarLots.Add(Car3);
 
-            //Create a CarLot class
-            //It should have at least one property: a List of cars
-            //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
-            //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            foreach (var car in lot.CarLots)
+            {
+                Console.WriteLine($"{car.Year} {car.Make} {car.Model}");
+                //*************BONUS*************//
+
+                // Set the properties utilizing the 3 different ways we learned about, one way for each car
+
+                //*************BONUS X 2*************//
+
+                //Create a CarLot class
+                //It should have at least one property: a List of cars
+                //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
+            }   //At the end iterate through the list printing each of car's Year, Make, and Model to the console
         }
     }
 }
